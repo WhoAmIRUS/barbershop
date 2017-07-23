@@ -1,0 +1,9 @@
+{
+  "name": "barbershop",
+  "version": "0.0.1",
+  "dependencies": {
+    "bootstrap": "v4.0.0-alpha.2",
+    "normalize-css": "normalize.css#^7.0.0",
+    "jquery": "3.2"
+  }
+}
