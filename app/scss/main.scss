@@ -8,10 +8,6 @@ body{
   padding: 0;
   line-height: 1;
 }
-p ul div button{
-  margin: 0;
-  padding: 0;
-}
 button{
   font-family: 'PT Sans Narrow', sans-serif;
 }
@@ -23,14 +19,14 @@ button:focus{
   outline: none;
 }
 
-header{
+.header{
   background: url("../img/index-backgound.jpg") no-repeat center top;
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
   height: 720px;
   align-content: flex-start;
-  nav{
+  .header-menu__wrapper{
     flex: 1 1 100%;
     align-self: flex-start;
   }
@@ -55,16 +51,16 @@ header{
         cursor: pointer;
         border-bottom: 3px solid #826550;
       }
-      a{
-        cursor: pointer;
+      }
+    .header-menu__links{
+      cursor: pointer;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 24px;
+      &:hover{
+        text-decoration: none;
         color: white;
-        font-size: 18px;
-        font-weight: bold;
-        line-height: 24px;
-        &:hover{
-          text-decoration: none;
-          color: white;
-        }
       }
     }
   }
@@ -75,7 +71,7 @@ header{
     margin: 57px auto;
   }
 }
-main{
+.main{
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
@@ -130,27 +126,22 @@ main{
 
 .advantages{
   display: flex;
-  .advantages-triangle{
-    border: 10px solid transparent;
-    border-top: 10px solid white;
-    border-right: 10px solid white;
-    align-self: flex-start;
-    height: 0;
-    width: 0;
-    margin: 27px 0;
-  }
   .advantages-statistics {
     width: 320px;
     height: 318px;
     background-color: white;
     padding: 0 40px;
+    position: relative;
+    .advantages-statistics__text{
+      padding-top: 38px;
+    }
     .advantages-statistics__text_title{
       color: #000000;
       font-size: 40px;
       font-weight: bold;
     }
     .advantages-statistics__text_dark{
-      margin-top: 48px;
+      padding-top: 48px;
       font-size: 20px;
       line-height: 1.35;
       color: #000000;
@@ -159,9 +150,21 @@ main{
       font-size: 20px;
       line-height: 1.35;
       color: rgba(0, 0, 0, 0.3);
-      margin-top: 41px;
+      padding-top: 41px;
+    }
+    &::before{
+      border: 10px solid transparent;
+      border-top: 10px solid white;
+      border-right: 10px solid white;
+      align-self: flex-start;
+      height: 0;
+      width: 0;
+      margin: 40px -60px;
+      content: "";
+      position: absolute;
     }
   }
+
   .advantages__items {
     display: flex;
     flex-flow: row wrap;
@@ -171,17 +174,19 @@ main{
       flex-flow: row wrap;
       width: 320px;
       height: 159px;
+      .advantages__item-text {
+        padding-top: 20px;
+        padding-left: 37px;
+      }
       .advantages__item-text_size_big{
         color: white;
         font-size: 72px;
         font-weight: bold;
-        margin: 20px 0 0 37px;
-
       }
       .advantages__item-text_size_small{
         font-size: 20px;
         color: #f7f4f1;
-        margin: 0 37px;
+        padding-top: 0;
       }
     }
     .advantages__item_top-light{
@@ -261,7 +266,7 @@ main{
   }
 }
 
-.item-date{
+.news__item-date{
   width: 50px;
   height: 50px;
   background-color: black;
@@ -270,12 +275,12 @@ main{
   align-items: center;
   justify-content: flex-end;
   position: relative;
-  .item-date__text_number{
+  .news__item-date__text_number{
     font-size: 30px;
     font-weight: bold;
     color: #ffffff;
   }
-  .item-date__text_month{
+  .news__item-date__text_month{
     font-size: 14px;
     color: #ffffff;
   }
@@ -291,7 +296,7 @@ main{
   }
 }
 
-.item-text{
+.news__item-text{
   width: 209px;
   font-size: 18px;
   line-height: 1.5;
@@ -310,6 +315,7 @@ main{
   }
   .review__slider{
     margin-top: 47px;
+    margin-bottom: 46px;
   }
 }
 .slider{
@@ -327,7 +333,6 @@ main{
     border: solid 1px #e5ddd5;
     display: flex;
     flex-flow: row nowrap;
-    width: calc(100%/3);
     list-style: none;
     .slider__content-img{
       width: 249px;
@@ -368,11 +373,69 @@ main{
     position: relative;
     display: flex;
     flex-flow: row nowrap;
-    width: calc(100% * 3);
     margin: 0;
     padding: 0;
     transition: 1s;
     transition-timing-function: ease-in-out;
+  }
+}
+
+.footer{
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  .footer-content{
+    width: 1279px;
+    height: 198px;
+    background-color: #292929;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row nowrap;
+    align-items: center;
+  }
+}
+
+.address{
+  width: 313px;
+  .address__title{
+    font-size: 18px;
+    line-height: 1.5;
+    color: #ffffff;
+    font-weight: bold;
+    padding-bottom: 10px;
+  }
+  .address__paragraph{
+    font-size: 16px;
+    line-height: 1.5;
+    color: #ffffff;
+  }
+}
+
+.communication{
+  display: flex;
+  flex-flow: row wrap;
+  width: 150px;
+  height: 87px;
+  justify-content: center;
+  .communication__title{
+    width: 113px;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #ffffff;
+  }
+  .communication__icon{
+    border: solid 1px #4b4b4b;
+    padding: 11px 21px;
+    margin-right: 6px;
+  }
+  .communication__icon_vk{
+    background: url("../img/vk-logo.png") no-repeat center;
+  }
+  .communication__icon_inst{
+    background: url("../img/instagram-social-network-logo-of-photo-camera.png") no-repeat center;
+  }
+  .communication__icon_face{
+    background: url("../img/facebook-logo.png") no-repeat center;
   }
 }
 

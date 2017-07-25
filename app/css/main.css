@@ -9,10 +9,6 @@ body {
   padding: 0;
   line-height: 1; }
 
-p ul div button {
-  margin: 0;
-  padding: 0; }
-
 button {
   font-family: 'PT Sans Narrow', sans-serif; }
 
@@ -22,7 +18,7 @@ button:hover {
 button:focus {
   outline: none; }
 
-header {
+.header {
   background: url("../img/index-backgound.jpg") no-repeat center top;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -37,13 +33,13 @@ header {
   height: 720px;
   -ms-flex-line-pack: start;
       align-content: flex-start; }
-  header nav {
+  .header .header-menu__wrapper {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 100%;
             flex: 1 1 100%;
     -ms-flex-item-align: start;
         align-self: flex-start; }
-  header .header-menu {
+  .header .header-menu {
     margin: 0;
     height: 72px;
     background-color: #000000;
@@ -53,7 +49,7 @@ header {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center; }
-    header .header-menu .header-menu__items {
+    .header .header-menu .header-menu__items {
       margin: 0 30px;
       height: 72px;
       -webkit-transition: 0.7s;
@@ -68,25 +64,25 @@ header {
       -webkit-box-align: center;
           -ms-flex-align: center;
               align-items: center; }
-      header .header-menu .header-menu__items:hover {
+      .header .header-menu .header-menu__items:hover {
         cursor: pointer;
         border-bottom: 3px solid #826550; }
-      header .header-menu .header-menu__items a {
-        cursor: pointer;
-        color: white;
-        font-size: 18px;
-        font-weight: bold;
-        line-height: 24px; }
-        header .header-menu .header-menu__items a:hover {
-          text-decoration: none;
-          color: white; }
-  header .header__logo {
+    .header .header-menu .header-menu__links {
+      cursor: pointer;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 24px; }
+      .header .header-menu .header-menu__links:hover {
+        text-decoration: none;
+        color: white; }
+  .header .header__logo {
     background: url("../img/content-logo.png") no-repeat center top;
     width: 100%;
     height: 153px;
     margin: 57px auto; }
 
-main {
+.main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -97,10 +93,10 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap; }
-  main .main__info {
+  .main .main__info {
     -ms-flex-item-align: start;
         align-self: flex-start; }
-  main .main-info {
+  .main .main-info {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -114,12 +110,12 @@ main {
     background-color: #323232;
     width: 1279px;
     position: relative; }
-    main .main-info .main-info__advantages {
+    .main .main-info .main-info__advantages {
       margin-top: -159px;
       margin-left: -20px; }
-    main .main-info .main-info__singularity {
+    .main .main-info .main-info__singularity {
       margin-top: 80px; }
-    main .main-info::after {
+    .main .main-info::after {
       border: 640px solid transparent;
       border-top: 40px solid #323232;
       border-bottom: 0;
@@ -128,10 +124,10 @@ main {
       bottom: -40px;
       display: block;
       height: 0; }
-  main .main__wall {
+  .main .main__wall {
     background-color: #f8f5f2;
     width: 1279px; }
-    main .main__wall .main-wall__news {
+    .main .main__wall .main-wall__news {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -143,37 +139,31 @@ main {
           -ms-flex-pack: center;
               justify-content: center;
       margin: 121px 160px 46px 160px; }
-    main .main__wall .main-wall__line {
+    .main .main__wall .main-wall__line {
       width: 100%;
       height: 1px;
       background-color: #e5ddd5; }
-    main .main__wall .main-wall__review {
+    .main .main__wall .main-wall__review {
       margin: 41px 160px 0 160px; }
 
 .advantages {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
-  .advantages .advantages-triangle {
-    border: 10px solid transparent;
-    border-top: 10px solid white;
-    border-right: 10px solid white;
-    -ms-flex-item-align: start;
-        align-self: flex-start;
-    height: 0;
-    width: 0;
-    margin: 27px 0; }
   .advantages .advantages-statistics {
     width: 320px;
     height: 318px;
     background-color: white;
-    padding: 0 40px; }
+    padding: 0 40px;
+    position: relative; }
+    .advantages .advantages-statistics .advantages-statistics__text {
+      padding-top: 38px; }
     .advantages .advantages-statistics .advantages-statistics__text_title {
       color: #000000;
       font-size: 40px;
       font-weight: bold; }
     .advantages .advantages-statistics .advantages-statistics__text_dark {
-      margin-top: 48px;
+      padding-top: 48px;
       font-size: 20px;
       line-height: 1.35;
       color: #000000; }
@@ -181,7 +171,18 @@ main {
       font-size: 20px;
       line-height: 1.35;
       color: rgba(0, 0, 0, 0.3);
-      margin-top: 41px; }
+      padding-top: 41px; }
+    .advantages .advantages-statistics::before {
+      border: 10px solid transparent;
+      border-top: 10px solid white;
+      border-right: 10px solid white;
+      -ms-flex-item-align: start;
+          align-self: flex-start;
+      height: 0;
+      width: 0;
+      margin: 40px -60px;
+      content: "";
+      position: absolute; }
   .advantages .advantages__items {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -201,15 +202,17 @@ main {
               flex-flow: row wrap;
       width: 320px;
       height: 159px; }
+      .advantages .advantages__items .advantages__item .advantages__item-text {
+        padding-top: 20px;
+        padding-left: 37px; }
       .advantages .advantages__items .advantages__item .advantages__item-text_size_big {
         color: white;
         font-size: 72px;
-        font-weight: bold;
-        margin: 20px 0 0 37px; }
+        font-weight: bold; }
       .advantages .advantages__items .advantages__item .advantages__item-text_size_small {
         font-size: 20px;
         color: #f7f4f1;
-        margin: 0 37px; }
+        padding-top: 0; }
     .advantages .advantages__items .advantages__item_top-light {
       background-color: #4e4e4e; }
     .advantages .advantages__items .advantages__item_top-dark {
@@ -297,7 +300,7 @@ main {
       margin-right: 20px;
       margin-top: 10px; }
 
-.item-date {
+.news__item-date {
   width: 50px;
   height: 50px;
   background-color: black;
@@ -315,14 +318,14 @@ main {
       -ms-flex-pack: end;
           justify-content: flex-end;
   position: relative; }
-  .item-date .item-date__text_number {
+  .news__item-date .news__item-date__text_number {
     font-size: 30px;
     font-weight: bold;
     color: #ffffff; }
-  .item-date .item-date__text_month {
+  .news__item-date .news__item-date__text_month {
     font-size: 14px;
     color: #ffffff; }
-  .item-date::after {
+  .news__item-date::after {
     border: 25px solid transparent;
     border-top: 10px solid black;
     border-bottom: 0;
@@ -332,7 +335,7 @@ main {
     bottom: -10px;
     height: 0; }
 
-.item-text {
+.news__item-text {
   width: 209px;
   font-size: 18px;
   line-height: 1.5;
@@ -351,7 +354,8 @@ main {
         -ms-flex: 1 1 71%;
             flex: 1 1 71%; }
   .review .review__slider {
-    margin-top: 47px; }
+    margin-top: 47px;
+    margin-bottom: 46px; }
 
 .slider {
   display: -webkit-box;
@@ -379,7 +383,6 @@ main {
     -webkit-box-direction: normal;
         -ms-flex-flow: row nowrap;
             flex-flow: row nowrap;
-    width: calc(100%/3);
     list-style: none; }
     .slider .slider__content .slider__content-img {
       width: 249px;
@@ -417,13 +420,82 @@ main {
     -webkit-box-direction: normal;
         -ms-flex-flow: row nowrap;
             flex-flow: row nowrap;
-    width: calc(100% * 3);
     margin: 0;
     padding: 0;
     -webkit-transition: 1s;
     transition: 1s;
     -webkit-transition-timing-function: ease-in-out;
             transition-timing-function: ease-in-out; }
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap; }
+  .footer .footer-content {
+    width: 1279px;
+    height: 198px;
+    background-color: #292929;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+
+.address {
+  width: 313px; }
+  .address .address__title {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #ffffff;
+    font-weight: bold;
+    padding-bottom: 10px; }
+  .address .address__paragraph {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #ffffff; }
+
+.communication {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  width: 150px;
+  height: 87px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .communication .communication__title {
+    width: 113px;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #ffffff; }
+  .communication .communication__icon {
+    border: solid 1px #4b4b4b;
+    padding: 11px 21px;
+    margin-right: 6px; }
+  .communication .communication__icon_vk {
+    background: url("../img/vk-logo.png") no-repeat center; }
+  .communication .communication__icon_inst {
+    background: url("../img/instagram-social-network-logo-of-photo-camera.png") no-repeat center; }
+  .communication .communication__icon_face {
+    background: url("../img/facebook-logo.png") no-repeat center; }
 
 .news .news__title, .review .review__title {
   font-size: 40px;
