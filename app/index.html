@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barbershop</title>
     <!-- build:css css/vendor.css -->
     <!-- bower:css -->
@@ -15,20 +16,23 @@
 </head>
 <body>
 <header class="header">
+    <div class="header-menu__button">
+        <div class="header-menu__button-helper"></div>
+    </div>
     <nav class="header-menu__wrapper">
         <ul class="header__menu header-menu">
-            <li class="header-menu__items"><a class="header-menu__links">Главная</a></li>
+            <li class="header-menu__items active"><a class="header-menu__links">Главная</a></li>
             <li class="header-menu__items"><a class="header-menu__links">Наши работы</a></li>
             <li class="header-menu__items"><a class="header-menu__links">Записаться</a></li>
             <li class="header-menu__items"><a class="header-menu__links">Контакты</a></li>
         </ul>
     </nav>
     <div class="header__logo"></div>
+    <div class="header-menu__title">Главная</div>
 </header>
 <main class="main">
     <div class="main__info main-info">
         <div class="main-info__advantages advantages">
-            <div class="advantages-triangle"></div>
             <div class="advantages-statistics">
                 <div class="advantages-statistics__text advantages-statistics__text_title">Стрижка у нас это выгодно!</div>
                 <div class="advantages-statistics__text advantages-statistics__text_dark">Мужская стрижка требует точного подхода. Обратимся к статистике:</div>
@@ -54,28 +58,34 @@
             </div>
         </div>
         <div class="main-info__singularity singularity">
-            <div class="singularity__item">
+            <div class="singularity__item current">
                 <img src="img/scissors.jpg" class="singularity__item-img">
                 <div class="singularity__item-text">
-                    <div class="singularity__item-text__title">Быстро</div>
+                    <div class="singularity__item-text__title">Быстро1</div>
                     <div class="singularity__item-text__article">Мы делаем свою работу быстро! Два часа пролетят незаметно и вы — счастливый обладатель стильной стрижки-минутки</div>
                 </div>
             </div>
             <div class="singularity__item">
                 <img src="img/scissors.jpg" class="singularity__item-img">
                 <div class="singularity__item-text">
-                    <div class="singularity__item-text__title">Быстро</div>
+                    <div class="singularity__item-text__title">Быстро2</div>
                     <div class="singularity__item-text__article">Мы делаем свою работу быстро! Два часа пролетят незаметно и вы — счастливый обладатель стильной стрижки-минутки</div>
                 </div>
             </div>
             <div class="singularity__item">
                 <img src="img/scissors.jpg" class="singularity__item-img">
                 <div class="singularity__item-text">
-                    <div class="singularity__item-text__title">Быстро</div>
+                    <div class="singularity__item-text__title">Быстро3</div>
                     <div class="singularity__item-text__article">Мы делаем свою работу быстро! Два часа пролетят незаметно и вы — счастливый обладатель стильной стрижки-минутки</div>
                 </div>
             </div>
         </div>
+        <div class="singularity__rhombus-wrapper">
+            <div class="singularity__rhombus">&#9670</div>
+            <div class="singularity__rhombus">&#9671</div>
+            <div class="singularity__rhombus">&#9671</div>
+        </div>
+
     </div>
     <div class="main__wall main-wall">
         <div class="main-wall__news news">
@@ -128,41 +138,46 @@
             <div class="review__title">Отзывы о нас</div>
             <button class="review__button">Оставить свой</button>
             <div class="review__slider slider">
-                <button class="slider__button slider__button_left">&#9664</button>
-                <div class="slider__block">
-                    <div class="slider__viewport">
-                        <div class="slider__slidewrapper">
-                            <div class="slider__content">
-                                <img src="img/barker.jpg" class="slider__content-img">
-                                <div class="slider__content-text">
-                                    <div class="slider__content-text__title">Трэвис Баркер</div>
-                                    <div class="slider__content-text__article">Спасибо за лысину! Был проездом в Москве, заскочил побриться, чтобы было видно новую татуировку!</div>
-                                </div>
-                            </div>
-                            <div class="slider__content">
-                                <img src="img/barker.jpg" class="slider__content-img">
-                                <div class="slider__content-text">
-                                    <div class="slider__content-text__title">Lorem ipsum.</div>
-                                    <div class="slider__content-text__article">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium dolore error iusto possimus, temporibus?</div>
-                                </div>
-                            </div>
-                            <div class="slider__content">
-                                <img src="img/barker.jpg" class="slider__content-img">
-                                <div class="slider__content-text">
-                                    <div class="slider__content-text__title">Lorem ipsum dolor.</div>
-                                    <div class="slider__content-text__article">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, nam.</div>
-                                </div>
-                            </div>
+                <button class="slider__button slider__button_prev">&#9664</button>
+                <ul class="slider__wrapper">
+                    <li class="slider__content current">
+                        <div class="slider__content-img"></div>
+                        <div class="slider__content-text">
+                            <div class="slider__content-text__title">Трэвис Баркер1</div>
+                            <div class="slider__content-text__article">Спасибо за лысину! Был проездом в Москве, заскочил побриться, чтобы было видно новую татуировку!</div>
                         </div>
-                    </div>
-                </div>
-                <button class="slider__button slider__button_right">&#9654</button>
+                    </li>
+                    <li class="slider__content">
+                        <div class="slider__content-img"></div>
+                        <div class="slider__content-text">
+                            <div class="slider__content-text__title">Трэвис Баркер2</div>
+                            <div class="slider__content-text__article">Спасибо за лысину! Был проездом в Москве, заскочил побриться, чтобы было видно новую татуировку!</div>
+                        </div>
+                    </li>
+                    <li class="slider__content">
+                        <div class="slider__content-img"></div>
+                        <div class="slider__content-text">
+                            <div class="slider__content-text__title">Трэвис Баркер3</div>
+                            <div class="slider__content-text__article">Спасибо за лысину! Был проездом в Москве, заскочил побриться, чтобы было видно новую татуировку!</div>
+                        </div>
+                    </li>
+                    <li class="slider__content">
+                        <div class="slider__content-img"></div>
+                        <div class="slider__content-text">
+                            <div class="slider__content-text__title">Трэвис Баркер4</div>
+                            <div class="slider__content-text__article">Спасибо за лысину! Был проездом в Москве, заскочил побриться, чтобы было видно новую татуировку!</div>
+                        </div>
+                    </li>
+                </ul>
+                <button class="slider__button slider__button_next">&#9654</button>
                 <div class="slider__rhombus-wrapper">
                     <button class="slider__rhombus">&#9670</button>
                     <button class="slider__rhombus">&#9671</button>
                     <button class="slider__rhombus">&#9671</button>
+                    <button class="slider__rhombus">&#9671</button>
                 </div>
             </div>
+
         </div>
     </div>
 </main>
@@ -170,8 +185,8 @@
     <div class="footer__content footer-content">
         <div class="footer-content__address address">
             <div class="address__title">Барбершоп Бородинский</div>
-            <div class="address__paragraph">г. Санкт-Петербург, ул. Большая Конюшенная 19/8
-                Тел.: +7 (812) 555-66-66</div>
+            <div class="address__paragraph">г. Санкт-Петербург, ул. Большая Конюшенная 19/8</div>
+            <div class="address__telephone">+7 (812) 555-66-66</div>
         </div>
         <div class="footer-content__communication communication">
             <div class="communication__title">Давайте дружить!</div>
