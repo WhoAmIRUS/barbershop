@@ -23,7 +23,31 @@ ul{
   margin: 0;
 }
 
-.header{
+.section{
+  background: #F8F5F2;
+  width: 100%;
+  &_color {
+    &_black {
+      background: black;
+    }
+    &_grey{
+      background: #323232;
+    }
+  }
+  &__inner {
+    margin: 0 auto;
+    width: 100%;
+
+    @media screen and (min-width: 961px){
+      width: 960px;
+    }
+    @media screen and (min-width: 661px) and (max-width: 960px) {
+      width: 640px;
+    }
+  }
+}
+
+.navigation{
   background: url("../img/index-backgound.jpg") no-repeat center top;
   display: flex;
   justify-content: center;
@@ -31,21 +55,20 @@ ul{
   min-height: 720px;
   height: 100vh;
   align-content: flex-start;
-  .header-menu__title{
+  .menu__title{
     display: none;
   }
-  .header-menu__wrapper{
-    flex: 1 1 100%;
+  .menu__wrapper{
     align-self: flex-start;
   }
-  .header-menu{
-    margin: 0;
+  .menu{
+    margin: 0 auto;
     height: 72px;
     background-color: #000000;
     display: flex;
     justify-content: center;
 
-    .header-menu__items{
+    .menu__items{
       margin: 0 30px;
       height: 72px;
       transition: 0.7s;
@@ -60,7 +83,7 @@ ul{
         border-bottom: 3px solid #826550;
       }
       }
-    .header-menu__links{
+    .menu__link{
       cursor: pointer;
       color: white;
       font-size: 18px;
@@ -72,7 +95,7 @@ ul{
       }
     }
   }
-  .header__logo{
+  .navigation__logo{
     background: url("../img/content-logo.png") no-repeat center top;
     width: 100%;
     height: 153px;
@@ -83,68 +106,42 @@ ul{
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
-  .main__info {
-    align-self: flex-start;
+  .main__advantages{
+    margin-top: -150px;
   }
-  .main-info{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    background-color: #323232;
-    width: 84%;
-    position: relative;
-    .main-info__advantages{
-      margin-top: -150px;
-    }
-    .main-info__singularity{
-      width: 100%;
-      margin-top: 80px;
-      margin-bottom: 50px;
-    }
-    &::after{
-      background: url("../img/triangle.svg") no-repeat center;
-      content: "";
-      width: 640px;
-      height: auto;
-      position: absolute;
-      bottom: -40px;
-      display: block;
-    }
+  .main__singularity{
+    width: 100%;
+    margin-top: 80px;
+    margin-bottom: 50px;
   }
-  .main__wall {
-    background-color: #f8f5f2;
-    width: 84%;
-    .main-wall__news {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-between;
-      margin-top: 121px;
-      padding-right: 160px;
-      padding-left: 160px;
-    }
-    .main-wall__line {
-      width: 100%;
-      height: 1px;
-      background-color: #e5ddd5;
-    }
-    .main-wall__review {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-between;
-      margin-top: 121px;
-      margin-bottom: 46px;
-      padding-right: 160px;
-      padding-left: 160px;
-    }
+  &::after{
+    background: url("../img/triangle.svg") no-repeat center;
+    content: "";
+    width: 640px;
+    height: auto;
+    position: absolute;
+    bottom: -40px;
+    display: block;
+  }
+  .main__news {
+    margin-top: 70px;
+  }
+  .main__line {
+    width: 100%;
+    height: 1px;
+    background-color: #e5ddd5;
+  }
+  .main__review {
+    margin-top: 46px;
+    margin-bottom: 46px;
   }
 }
 
 .advantages{
   display: flex;
   flex-flow: row wrap;
-  width: 960px;
   .advantages-statistics {
-    flex: 1 1 32%;
+    flex: 1 1 33%;
     background-color: white;
     padding: 0 40px;
     position: relative;
@@ -163,6 +160,7 @@ ul{
       padding-top: 48px;
     }
     .advantages-statistics__text_light{
+      display: block;
       font-size: 20px;
       line-height: 1.35;
       color: rgba(0, 0, 0, 0.3);
@@ -180,7 +178,9 @@ ul{
       position: absolute;
     }
   }
-
+  .advantages-statistics__text_light{
+    display: none;
+  }
   .advantages__items {
     display: flex;
     flex-flow: row wrap;
@@ -222,7 +222,6 @@ ul{
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  flex: 1 1 100%;
  .singularity__item{
    display: flex;
    flex-flow: column nowrap;
@@ -271,6 +270,9 @@ ul{
 }
 
 .news{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
   .news__title{
     @extend  %wall_title;
   }
@@ -342,6 +344,7 @@ ul{
 .review{
   display: flex;
   flex-flow: row wrap;
+  justify-content: space-between;
   .review__title {
     @extend %wall_title;
   }
@@ -440,9 +443,8 @@ ul{
   justify-content: center;
   flex-flow: row wrap;
   .footer-content{
-    width: 84%;
+    width: 100%;
     height: 198px;
-    background-color: #292929;
     display: flex;
     justify-content: space-around;
     flex-flow: row nowrap;

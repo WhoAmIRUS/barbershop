@@ -38,5 +38,5 @@ gulp.task('watch', function () {
 });
 
 gulp.task('watch-css', function(){
-    gulp.watch('app/scss/main.scss', ['css', 'html']);
+    gulp.watch(['app/scss/main.scss', 'app/scss/main1.scss', 'app/scss/_media.scss'], ['css', 'html']);
 });

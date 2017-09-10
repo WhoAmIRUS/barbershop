@@ -398,25 +398,25 @@ $(document).ready(function () {
         }
     });
 
-    var trigger = document.querySelector('.header-menu__button');
+    var trigger = document.querySelector('.menu__button');
 
     trigger.addEventListener('click', function() {
-        if (trigger.classList.contains('header-menu__button_open')) {
-            $('.header-menu__wrapper').css({
+        if (trigger.classList.contains('menu__button_open')) {
+            $('.menu__wrapper').css({
                 right: '-250px'
             });
-            $('.header-menu__button').css({
+            $('.menu__button').css({
                 right: '0'
             });
-            trigger.classList.remove('header-menu__button_open');
+            trigger.classList.remove('menu__button_open');
         } else {
-            $('.header-menu__wrapper').css({
+            $('.menu__wrapper').css({
                 right: '0'
             });
-            $('.header-menu__button').css({
+            $('.menu__button').css({
                 right: '250px'
             });
-            trigger.classList.add('header-menu__button_open');
+            trigger.classList.add('menu__button_open');
         }
     });
     var scr_w=screen.width;

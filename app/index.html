@@ -15,24 +15,35 @@
     <!-- endbuild -->
 </head>
 <body>
-<header class="header">
-    <div class="header-menu__button">
-        <div class="header-menu__button-helper"></div>
+<div class="section section_color_black navigation">
+    <div class="section__inner">
+        <div class="menu__button">
+            <div class="menu__button-helper"></div>
+        </div>
+        <nav class="menu__wrapper">
+            <ul class="menu navigation-menu">
+                <li class="menu__items menu__items_active">
+                    <a class="menu__link">Главная</a>
+                </li>
+                <li class="menu__items">
+                    <a class="menu__link">Наши работы</a>
+                </li>
+                <li class="menu__items">
+                    <a class="menu__link">Записаться</a>
+                </li>
+                <li class="menu__items">
+                    <a class="menu__link">Контакты</a>
+                </li>
+            </ul>
+        </nav>
     </div>
-    <nav class="header-menu__wrapper">
-        <ul class="header__menu header-menu">
-            <li class="header-menu__items active"><a class="header-menu__links">Главная</a></li>
-            <li class="header-menu__items"><a class="header-menu__links">Наши работы</a></li>
-            <li class="header-menu__items"><a class="header-menu__links">Записаться</a></li>
-            <li class="header-menu__items"><a class="header-menu__links">Контакты</a></li>
-        </ul>
-    </nav>
-    <div class="header__logo"></div>
-    <div class="header-menu__title">Главная</div>
-</header>
+    <div class="navigation__logo"></div>
+    <div class="menu__title">Главная</div>
+</div>
 <main class="main">
-    <div class="main__info main-info">
-        <div class="main-info__advantages advantages">
+
+    <div class="section section_color_grey">
+        <div class="section__inner main__advantages advantages">
             <div class="advantages-statistics">
                 <div class="advantages-statistics__text advantages-statistics__text_title">Стрижка у нас это выгодно!</div>
                 <div class="advantages-statistics__text advantages-statistics__text_dark">Мужская стрижка требует точного подхода. Обратимся к статистике:</div>
@@ -56,8 +67,11 @@
                     <div class="advantages__item-text advantages__item-text_size_small">рублей вложений</div>
                 </div>
             </div>
+            <div class="advantages-statistics__text advantages-statistics__text_light">* — приведённые данные ложь</div>
         </div>
-        <div class="main-info__singularity singularity">
+    </div>
+    <div class="section section_color_grey">
+        <div class="section__inner main__singularity singularity">
             <div class="singularity__item current">
                 <img src="img/scissors.jpg" class="singularity__item-img">
                 <div class="singularity__item-text">
@@ -85,10 +99,9 @@
             <div class="singularity__rhombus">&#9671</div>
             <div class="singularity__rhombus">&#9671</div>
         </div>
-
     </div>
-    <div class="main__wall main-wall">
-        <div class="main-wall__news news">
+    <div class="section">
+        <div class="section__inner main__news news">
             <div class="news__title">Новости и акции</div>
             <button class="news__button">Показать все</button>
             <div class="news__items">
@@ -133,8 +146,10 @@
                 </div>
             </div>
         </div>
-        <div class="main-wall__line"></div>
-        <div class="main-wall__review review">
+    </div>
+    <div class="main__line"></div>
+    <div class="section">
+        <div class="section__inner main__review review">
             <div class="review__title">Отзывы о нас</div>
             <button class="review__button">Оставить свой</button>
             <div class="review__slider slider">
@@ -181,23 +196,26 @@
         </div>
     </div>
 </main>
-<footer class="footer">
-    <div class="footer__content footer-content">
-        <div class="footer-content__address address">
-            <div class="address__title">Барбершоп Бородинский</div>
-            <div class="address__paragraph">г. Санкт-Петербург, ул. Большая Конюшенная 19/8</div>
-            <div class="address__telephone">+7 (812) 555-66-66</div>
-        </div>
-        <div class="footer-content__communication communication">
-            <div class="communication__title">Давайте дружить!</div>
-            <div class="communication__icons">
-                <a href="https://vk.com/forever_alone_every_time" class="communication__icon communication__icon_vk"></a>
-                <a href="" class="communication__icon communication__icon_inst"></a>
-                <a href="" class="communication__icon communication__icon_face"></a>
+<div class="section section_color_grey">
+    <footer class="section__inner footer">
+        <div class="footer__content footer-content">
+            <div class="footer-content__address address">
+                <div class="address__title">Барбершоп Бородинский</div>
+                <div class="address__paragraph">г. Санкт-Петербург, ул. Большая Конюшенная 19/8</div>
+                <div class="address__telephone">+7 (812) 555-66-66</div>
+            </div>
+            <div class="footer-content__communication communication">
+                <div class="communication__title">Давайте дружить!</div>
+                <div class="communication__icons">
+                    <a href="https://vk.com/forever_alone_every_time" class="communication__icon communication__icon_vk"></a>
+                    <a href="" class="communication__icon communication__icon_inst"></a>
+                    <a href="" class="communication__icon communication__icon_face"></a>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
+</div>
+
 <!-- build:js js/vendor.js -->
 <!-- bower:js -->
 <script src="bower_components/jquery/dist/jquery.js"></script>
